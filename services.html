@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Innowix Workspace - Service Page</title>
+    <script src="https://kit.fontawesome.com/3a3e3b7b30.js" crossorigin="anonymous"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #1a0029, #000033);
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .navbar-logo {
+            display: flex;
+        }
+
+        .navbar-logo img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-right: 15px;
+        }
+
+        .navbar-logo span {
+            font-size: 0.8rem;
+            font-weight: 300;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.7;
+        }
+
+        .navbar-menu {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar-menu li {
+            margin-left: 25px;
+        }
+
+        .navbar-menu a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 400;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .navbar-menu a::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: #ffffff;
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .navbar-menu a:hover {
+            color: #ffffff;
+        }
+
+        .navbar-menu a:hover::after {
+            transform: scaleX(1);
+        }
+
+        .content {
+            padding: 30px;
+        }
+
+      
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .card {
+            width: 300px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s;
+            margin: 10px;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card-image {
+            overflow: hidden;
+        }
+
+        .card-image img {
+            width: 100%;
+            transition: transform 0.6s, filter 0.6s;
+        }
+
+        .card:hover .card-image img {
+            transform: rotateY(180deg);
+            filter: grayscale(100%);
+        }
+
+        .card-content {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .card-content h3 {
+            margin: 0;
+            font-size: 1.5em;
+            color: #333;
+        }
+
+        .card-content p {
+            color: #777;
+            font-size: 1em;
+            margin: 10px 0 0;
+        }
+
+        .container_1 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(145deg, #2a0141, #000000);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            max-width: 90%;
+            box-sizing: border-box;
+            gap: 90px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 60px;
+        }
+
+        .footer.details {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            color: #fff;
+            flex-wrap: wrap;
+            text-align: left;
+        }
+
+        .footer-img img {
+            height: 80px;
+            border-radius: 50%;
+        }
+
+        .footer-detail p {
+            margin: 5px 0;
+            line-height: 1.5;
+        }
+
+        .footer-links {
+            text-align: center;
+            padding: 20px;
+            color: #fff;
+        }
+
+        .footer-menu {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .footer-menu li {
+            margin: 0 15px;
+        }
+
+        .footer-menu li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .footer-menu li a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-socials {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .social-icon i {
+            height: 30px;
+            margin: 0 10px;
+            border-radius: 40%;
+            transition: transform 0.3s ease;
+        }
+
+        .social-icon i:hover {
+            transform: scale(1.2);
+        }
+
+     
+
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="navbar-logo">
+            <img src="logo.png" alt="Logo">
+        </div>
+        <ul class="navbar-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="team.html">Team</a></li>
+            <li><a href="contact.html">Contact us</a></li>
+        </ul>
+    </nav>
+    <div class="headingtitles">
+        <h1 class="heading-title">OUR<span class="highlight"> SERVICES</span></h1>
+    </div>
+
+    <div class="container">
+        <div class="card">
+            <div class="card-image">
+                <img src="Webdevelopment.jpg" alt="Webdevelopment">
+            </div>
+            <div class="card-content">
+                <h3>Web Development</h3>
+                <p>Creating websites and web applications using coding languages like HTML, CSS, and JavaScript.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-image">
+                <img src="graphicdesign.jpg" alt="graphicdesign">
+            </div>
+            <div class="card-content">
+                <h3>Graphic Design</h3>
+                <p> Designing visuals and graphics for various purposes, such as logos, posters, and digital artwork.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-image">
+                <img src="eventmanagement.jpg" alt="eventmanagement">
+            </div>
+            <div class="card-content">
+                <h3>Event Management</h3>
+                <p>Planning and organizing events, ensuring everything runs smoothly from start to finish.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-image">
+                <img src="discordbot.jpg" alt="discordbot">
+            </div>
+            <div class="card-content">
+                <h3>Discord Bot Development</h3>
+                <p>Building automated bots for Discord servers to perform specific tasks or provide information.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-image">
+                <img src="appdevelopment.png" alt="appdevelopment">
+            </div>
+            <div class="card-content">
+                <h3>App Development</h3>
+                <p>Designing and coding applications for mobile devices or computers, often using languages like Java, Swift, or Python.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-image">
+                <img src="discordbotdevelopment.png" alt="discordbotdevelopment">
+            </div>
+            <div class="card-content">
+                <h3>Discord Server Development</h3>
+                <p>Setting up and managing Discord servers, creating channels, roles, and bots to enhance community interaction.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-image">
+                <img src="videoediting.jpg" alt="videoediting">
+            </div>
+            <div class="card-content">
+                <h3>Video Editing</h3>
+                <p>Editing and refining video footage to create a cohesive story or message.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-image">
+                <img src="VFX.jpg" alt="VFX">
+            </div>
+            <div class="card-content">
+                <h3>Visual Effects (VFX) </h3>
+                <p>Adding digital effects to videos or images to enhance or alter them creatively.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container_1" style="margin-top: 100px;">
+        <div class="footer details">
+            <div class="footer-img">
+                <img src="logo.png" alt="Company Logo">
+            </div>
+            <div class="footer-detail">
+                <p>Nepal</p>
+                <p>Email: innowixworkspace@gmail.com <br>
+                    Phone: 9888888888</p>
+            </div>
+        </div>
+        <div class="footer-links">
+            <p style="text-decoration: none; font-size: 30px;">LINKS</p>
+            <ul class="footer-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Team</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-socials">
+            <p style="text-decoration: none; font-size: 30px;">Socials</p>
+            <a href="#" class="social-icon"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="social-icon"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Innowix Workspace - Service Page</title>
+    <script src="https://kit.fontawesome.com/3a3e3b7b30.js" crossorigin="anonymous"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #1a0029, #000033);
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .navbar-logo {
+            display: flex;
+        }
+
+        .navbar-logo img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-right: 15px;
+        }
+
+        .navbar-logo span {
+            font-size: 0.8rem;
+            font-weight: 300;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.7;
+        }
+
+        .navbar-menu {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar-menu li {
+            margin-left: 25px;
+        }
+
+        .navbar-menu a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 400;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .navbar-menu a::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: #ffffff;
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .navbar-menu a:hover {
+            color: #ffffff;
+        }
+
+        .navbar-menu a:hover::after {
+            transform: scaleX(1);
+        }
+
+        .content {
+            padding: 30px;
+        }
+
+        .team-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0 auto;
+        }
+
+        .team-row {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .team-member {
+            text-align: center;
+            margin: 60px;
+            width: 300px;
+            padding: 20px;
+            position: relative;
+            transition: height 0.5s ease-in-out;
+        }
+
+        .team-member img {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            transition: width 0.5s ease-in-out, height 0.5s ease-in-out;
+        }
+
+        .team-member .name {
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .team-member .post {
+            font-size: 18px;
+            color: gray;
+        }
+
+        .detail {
+            font-size: 16px;
+            color: #666;
+            margin-top: 10px;
+            height: 0;
+            overflow: hidden;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out, height 0.5s ease-in-out;
+        }
+
+        .team-member:hover img {
+            width: 200px;
+            height: 200px;
+        }
+
+        .team-member:hover .detail {
+            opacity: 1;
+            height: auto;
+        }
+
+        .verticalline {
+            background-color: blue;
+            height: 70px;
+            width: 0px;
+            border: 3px solid blue;
+            position: absolute;
+        }
+
+        #line1 {
+            margin-top: 400px;
+        }
+
+        .horizontalline {
+            background-color: blue;
+            height: 0px;
+            width: 1000px;
+            border: 3px solid blue;
+            position: absolute;
+        }
+
+        #line2 {
+            margin-top: 470px;
+            margin-right: 200px;
+        }
+
+        #line3 {
+            margin-top: 470px;
+            margin-left: 200px;
+        }
+
+        #line4 {
+            margin-top: 470px;
+            margin-right: 400px;
+        }
+
+        #line5 {
+            margin-top: 470px;
+            margin-left: 400px;
+        }
+        #line6 {
+            margin-top: 470px;
+            margin-right: 1200px;
+        }
+        #line7 {
+            margin-top: 470px;
+            margin-left: 1200px;
+        }
+
+        .container_1 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(145deg, #2a0141, #000000);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            max-width: 90%;
+            box-sizing: border-box;
+            gap: 90px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 60px;
+        }
+
+        .footer.details {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            color: #fff;
+            flex-wrap: wrap;
+            text-align: left;
+        }
+
+        .footer-img img {
+            height: 80px;
+            border-radius: 50%;
+        }
+
+        .footer-detail p {
+            margin: 5px 0;
+            line-height: 1.5;
+        }
+
+        .footer-links {
+            text-align: center;
+            padding: 20px;
+            color: #fff;
+        }
+
+        .footer-menu {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .footer-menu li {
+            margin: 0 15px;
+        }
+
+        .footer-menu li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .footer-menu li a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-socials {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .social-icon i {
+            height: 30px;
+            margin: 0 10px;
+            border-radius: 40%;
+            transition: transform 0.3s ease;
+        }
+
+        .social-icon i:hover {
+            transform: scale(1.2);
+        }
+
+       
+
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="navbar-logo">
+            <img src="logo.png" alt="Logo">
+        </div>
+        <ul class="navbar-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="team.html">Team</a></li>
+            <li><a href="contact.html">Contact us</a></li>
+        </ul>
+    </nav>
+    <div class="headingtitles">
+
+        <h1 class="heading-title">Board of <span class="highlight"> Director</span></h1>
+
+    </div>
+   <div class="team-container">
+    <div class="verticalline" id="line1"></div>
+    <div class="horizontalline" id="line2"></div>
+    <div class="horizontalline" id="line3"></div>
+    <div class="verticalline" id="line4"></div>
+    <div class="verticalline" id="line5"></div>
+    <div class="verticalline" id="line6"></div>
+    <div class="verticalline" id="line7"></div>
+
+    <div class="team-row">
+        <div class="team-member member-1" onmouseover="showDetails(1)" onmouseout="hideDetails(1)">
+            <img src="garryshrestha.jpg" alt="Team Member 1">
+            <div class="name">GARRY SHRESTHA</div>
+            <div class="post">FOUNDER</div>
+            <div class="detail" id="detail-1">I dont know what to write , I dont know what to write.</div>
+        </div>
+    </div>
+    <div class="team-row">
+        <div class="team-member member-2" onmouseover="showDetails(2)" onmouseout="hideDetails(2)">
+            <img src="prayas bhatt.jpg" alt="Team Member 2">
+            <div class="name">PRAYAS BHATT</div>
+            <div class="post">MANAGER</div>
+            <div class="detail" id="detail-2">I dont know what to write , I dont know what to write.</div>
+        </div>
+        <div class="team-member member-3" onmouseover="showDetails(3)" onmouseout="hideDetails(3)">
+            <img src="prachan subedi.jpg" alt="Team Member 3">
+            <div class="name">PRACHAN SUBEDI</div>
+            <div class="post">MANAGER</div>
+            <div class="detail" id="detail-3">I dont know what to write , I dont know what to write.</div>
+        </div>
+        <div class="team-member member-4" onmouseover="showDetails(4)" onmouseout="hideDetails(4)">
+            <img src="rozeenshrestha.jpg" alt="Team Member 4">
+            <div class="name">ROZEEN SHRESTHA</div>
+            <div class="post">MANAGER</div>
+            <div class="detail" id="detail-4">I dont know what to write , I dont know what to write.</div>
+        </div>
+        <div class="team-member member-5" onmouseover="showDetails(5)" onmouseout="hideDetails(5)">
+            <img src="esewa.png" alt="Team Member 5">
+            <div class="name">MANOJ MAGAR</div>
+            <div class="post">MANAGER</div>
+            <div class="detail" id="detail-5">I dont know what to write , I dont know what to write.</div>
+        </div>
+    </div>
+</div>
+
+    <div class="container_1" style="margin-top: 100px;">
+        <div class="footer details">
+            <div class="footer-img">
+                <img src="logo.png" alt="Company Logo">
+            </div>
+            <div class="footer-detail">
+                <p>Nepal</p>
+                <p>Email: innowixworkspace@gmail.com <br>
+                    Phone: 9888888888</p>
+            </div>
+        </div>
+        <div class="footer-links">
+            <p style="text-decoration: none; font-size: 30px;">LINKS</p>
+            <ul class="footer-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Team</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-socials">
+            <p style="text-decoration: none; font-size: 30px;">Socials</p>
+            <a href="#" class="social-icon"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="social-icon"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+    </div>
+    <script>
+        function showDetails(member) {
+            const detailElement = document.getElementById('detail-' + member);
+            detailElement.style.height = 'auto';
+            detailElement.style.opacity = '1';
+
+            const naturalHeight = detailElement.scrollHeight + 'px';
+            detailElement.style.height = '0';
+            setTimeout(() => {
+                detailElement.style.height = naturalHeight;
+            }, 0);
+        }
+
+        function hideDetails(member) {
+            const detailElement = document.getElementById('detail-' + member);
+            detailElement.style.opacity = '0';
+            detailElement.style.height = '0';
+        }
+    </script>
+</body>
+
+</html>

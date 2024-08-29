@@ -1,0 +1,1124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Innowix Workspace - About Page</title>
+    <script src="https://kit.fontawesome.com/3a3e3b7b30.js" crossorigin="anonymous"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #1a0029, #000033);
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            align-items: center;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .navbar-logo {
+            display: flex;
+        }
+
+        .navbar-logo img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-right: 15px;
+        }
+
+        .navbar-logo span {
+            font-size: 0.8rem;
+            font-weight: 300;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.7;
+        }
+
+        .navbar-menu {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar-menu li {
+            margin-left: 25px;
+        }
+
+        .navbar-menu a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 400;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .navbar-menu a::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: #ffffff;
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .navbar-menu a:hover {
+            color: #ffffff;
+        }
+
+        .navbar-menu a:hover::after {
+            transform: scaleX(1);
+        }
+
+        .content {
+            padding: 30px;
+        }
+
+      
+
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: auto;
+            position: relative;
+            z-index: 1;
+            gap: 40px;
+        }
+
+        .container::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 50% 50%, rgba(0, 255, 255, 0.1), rgba(255, 0, 255, 0.1));
+            filter: blur(100px);
+            z-index: -1;
+        }
+
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        }
+
+        .highlight {
+            color: #ff00ff;
+            text-shadow: 0 0 20px #ff00ff;
+        }
+
+        p {
+            font-size: 1rem;
+            line-height: 1.5;
+            opacity: 0.8;
+        }
+
+        .cta-btn {
+            background: linear-gradient(90deg, #0077ff, #00ffff);
+            color: #ffffff;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            border-radius: 5px;
+            margin-top: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 0 20px rgba(0, 119, 255, 0.5);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .cta-btn:hover {
+            box-shadow: 0 0 30px rgba(0, 119, 255, 0.8);
+        }
+
+        .link {
+            display: inline-block;
+            margin-left: 1rem;
+            color: #ff00ff;
+            text-decoration: none;
+            text-shadow: 0 0 10px #ff00ff;
+        }
+
+        .nft-stack {
+            position: relative;
+            width: 300px;
+            height: 450px;
+            perspective: 1000px;
+        }
+
+        .nft-card {
+            position: absolute;
+            background-color: rgba(42, 42, 42, 0.8);
+            border-radius: 15px;
+            padding: 1rem;
+            width: 100%;
+            box-shadow: 0 0 30px rgba(0, 255, 255, 0.3);
+            transition: transform 0.6s ease, z-index 0.6s step-end;
+            transform-style: preserve-3d;
+        }
+
+        .nft-card-1 {
+            z-index: 3;
+            transform: translateY(0) rotateY(0);
+        }
+
+        .nft-card-2 {
+            top: 30px;
+            left: -15px;
+            transform: translateY(0) rotate(-10deg);
+            z-index: 2;
+        }
+
+        .nft-card-3 {
+            top: 60px;
+            left: 15px;
+            transform: translateY(0) rotate(10deg);
+            z-index: 1;
+        }
+
+        .nft-card:hover {
+            z-index: 4;
+            transition: transform 0.6s ease, z-index 0.6s step-start;
+        }
+
+        .nft-card-1:hover {
+            transform: translateY(-30px) rotateY(-15deg);
+        }
+
+        .nft-card-2:hover {
+            transform: translateY(-30px) rotate(5deg);
+        }
+
+        .nft-card-3:hover {
+            transform: translateY(-30px) rotate(-5deg);
+        }
+
+        .nft-image {
+            background: url('path/to/your/image.jpg') no-repeat center/cover;
+            height: 300px;
+            border-radius: 10px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nft-image::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0, 255, 255, 0.3), rgba(255, 0, 255, 0.3));
+            mix-blend-mode: screen;
+        }
+
+        .nft-details {
+            padding: 1rem 0;
+        }
+
+        .owner {
+            font-size: 0.9rem;
+        }
+
+        .owner span {
+            opacity: 0.6;
+        }
+
+        .timer {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin: 0.5rem 0;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        }
+
+        .bid {
+            font-size: 0.9rem;
+        }
+
+        .bid span {
+            color: #ff00ff;
+            font-weight: 600;
+            text-shadow: 0 0 10px #ff00ff;
+        }
+
+      
+        .container_1 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(145deg, #2a0141, #000000);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            max-width: 90%;
+            box-sizing: border-box;
+            gap: 90px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 60px;
+        }
+
+        .title {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+
+        .subtitle {
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+
+        .token-address {
+            background: #1c1c1c;
+            padding: 10px 20px;
+            border-radius: 5px;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        .token-address span {
+            margin-left: 10px;
+        }
+
+        .token-address span:hover {
+            cursor: pointer;
+        }
+
+        .supply {
+            font-size: 1.5em;
+            margin: 20px 0;
+        }
+
+        .bscscan-btn {
+            background: #ffcc00;
+            padding: 10px 20px;
+            border-radius: 5px;
+            color: #000;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+      
+        .container_2 {
+            display: flex;
+            gap: 50px;
+            color: #fff;
+            flex-wrap: wrap;
+            justify-content: center;
+            position: relative;
+            margin-top: 40px;
+        }
+
+        .phase {
+            position: relative;
+            text-align: center;
+            cursor: pointer;
+            margin: 20px;
+        }
+
+        .phase h2 {
+            margin: 0;
+            font-size: 2rem;
+            transition: color 0.3s ease;
+            z-index: 1;
+            position: relative;
+        }
+
+        .phase-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #0a0a23;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+            width: 300px;
+            z-index: 0;
+            margin-top: 10px;
+        }
+
+        .phase:hover .phase-content {
+            display: block;
+        }
+
+        .phase-content ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .phase-content ul li {
+            padding: 10px 0;
+            border-bottom: 1px solid #333;
+        }
+
+        .phase-img {
+            height: 100px;
+            width: 100px;
+            border-radius: 50%;
+            margin-bottom: 50px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .header {
+            padding: 60px 0;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .header p {
+            font-size: 1.25rem;
+        }
+
+        .grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            padding: 40px 0;
+        }
+
+        .card {
+            background: linear-gradient(to bottom, #000033, #000000);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .card h2 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+
+        .card p {
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .icon {
+            width: 48px;
+            height: 48px;
+            margin: 0 auto;
+            fill: #3b82f6;
+        }
+
+        .icon-utility {
+            fill: #8b5cf6;
+        }
+
+        .image-container {
+            padding: 60px 0;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+       
+        .container_3 {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .dropdown {
+            border-bottom: 1px solid #333;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            cursor: pointer;
+        }
+
+        .dropdown:hover {
+            background-color: #1a1a1a;
+        }
+
+        .dropdown-number {
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .dropdown-title {
+            flex: 1;
+            text-align: left;
+        }
+
+        .dropdown-icon {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: radial-gradient(circle at 50% 50%, #555, #000);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: transform 0.3s ease;
+        }
+
+        .dropdown-icon svg {
+            width: 12px;
+            height: 12px;
+        }
+
+        .dropdown-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+            padding: 0 20px;
+            background-color: #1a1a1a;
+        }
+
+        .dropdown-content p {
+            margin: 10px 0;
+            line-height: 1.5;
+        }
+
+        .dropdown.open .dropdown-content {
+            max-height: 200px;
+        }
+
+        .dropdown.open .dropdown-icon {
+            transform: rotate(90deg);
+        }
+
+        .container_4 {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+
+
+        .slider-container {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .slider {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            color: black;
+        }
+
+        .slide {
+            min-width: 33.33%;
+            box-sizing: border-box;
+            padding: 20px;
+            text-align: center;
+            background-color: #f1f1f1;
+            border: 1px solid #ddd;
+            cursor: pointer;
+        }
+
+        .slide img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        .slide h3 {
+            margin: 10px 0 5px 0;
+        }
+
+        .slide p {
+            margin: 0;
+            color: #000000;
+        }
+
+        .prev,
+        .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: rgb(0, 0, 0);
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
+        }
+
+        .popup {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .popup-content {
+            background-color: #000000;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #000000;
+            width: 80%;
+            max-width: 500px;
+            text-align: center;
+            border-radius: 8px;
+        }
+
+        .popup img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        .popup .close {
+            color: red;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+
+        .testimonial-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        .testimonial-slider {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            cursor: grab;
+        }
+
+        .testimonial {
+            min-width: 100%;
+            box-sizing: border-box;
+            padding: 20px;
+            text-align: center;
+            background-color: transparent;
+            border: 1px solid #000000;
+            color: white;
+        }
+
+        .testimonial img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        .testimonial h3 {
+            margin: 10px 0 5px 0;
+        }
+
+        .testimonial .testimonial-text {
+            margin: 0;
+            color: #666;
+        }
+
+        .testimonial-slider:active {
+            cursor: grabbing;
+        }
+
+    
+        .footer.details {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            color: #fff;
+            flex-wrap: wrap;
+            text-align: left;
+        }
+
+        .footer-img img {
+            height: 80px;
+            border-radius: 50%;
+        }
+
+        .footer-detail p {
+            margin: 5px 0;
+            line-height: 1.5;
+        }
+
+        .footer-links {
+            text-align: center;
+            padding: 20px;
+            color: #fff;
+        }
+
+        .footer-menu {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .footer-menu li {
+            margin: 0 15px;
+        }
+
+        .footer-menu li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .footer-menu li a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-socials {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .social-icon i {
+            height: 30px;
+            margin: 0 10px;
+            border-radius: 40%;
+            transition: transform 0.3s ease;
+        }
+
+        .social-icon i:hover {
+            transform: scale(1.2);
+        }
+
+      
+
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="navbar-logo">
+            <img src="logo.png" alt="Logo">
+        </div>
+        <ul class="navbar-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="team.html">Team</a></li>
+            <li><a href="contact.html">Contact us</a></li>
+        </ul>
+    </nav>
+    <div class="content">
+        <div class="container" style="margin-top: 100px;">
+            <div class="header">
+                <h1>
+                    OUR VISION<br>
+                </h1>
+                <p>
+                    VISION OF INNOWIX WORKSPACE
+                </p>
+            </div>
+
+            <div class="grid">
+                <div class="card">
+                    <img src="goal.avif" alt="" class="icon icon-utility">
+                    <h2>Goal</h2>
+                    <p>
+                        Innowix offers a dynamic platform designed to seamlessly integrate with our workflow, empowering
+                        us to streamline processes, foster collaboration, and ultimately achieve our objectives with
+                        precision and efficiency.
+
+
+                    </p>
+                </div>
+                <div class="card">
+                    <img src="utility.avif" alt="" class="icon icon-utility">
+                    <h2>Utility</h2>
+                    <p>
+                        Innowix Utility is not just a tool; it's a game-changer, revolutionizing the way we manage our
+                        resources, optimize our processes, and maximize our output. With its robust suite of features
+                        tailored to our needs, Innowix Utility empowers us to streamline operations, eliminate
+                        redundancies, and unlock new levels of productivity.
+
+
+                    </p>
+                </div>
+            </div>
+
+        </div>
+        <div class="container_3">
+            <h1>Frequently Asked<span class="highlight"> Question</span></h1>
+
+            <div class="dropdown" onclick="toggleDropdown(this)">
+                <span class="dropdown-number">01</span>
+                <span class="dropdown-title">How much to pay?</span>
+                <div class="dropdown-icon">
+                    <svg viewBox="0 0 20 20" fill="white" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M10.707 9.293a1 1 0 00-1.414 0L6 12.586l-3.293-3.293a1 1 0 00-1.414 1.414l4 4a1 1 0 001.414 0l4-4a1 1 0 000-1.414z" />
+                    </svg>
+                </div>
+            </div>
+            <div class="dropdown-content">
+                <p>The pricing varies based on the different services offered. Each service has its own unique rate. Prices are tailored to the specific needs of each service.</p>
+            </div>
+
+            <div class="dropdown" onclick="toggleDropdown(this)">
+                <span class="dropdown-number">02</span>
+                <span class="dropdown-title">How to pay for the services?</span>
+                <div class="dropdown-icon">
+                    <svg viewBox="0 0 20 20" fill="white" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M10.707 9.293a1 1 0 00-1.414 0L6 12.586l-3.293-3.293a1 1 0 00-1.414 1.414l4 4a1 1 0 001.414 0l4-4a1 1 0 000-1.414z" />
+                    </svg>
+                </div>
+            </div>
+            <div class="dropdown-content">
+                <p>We offer multiple payment options for your convenience. You can pay using popular online apps like Esewa, Khalti, and Imepay. Additionally, bank transfer is also available as a payment method.</p>
+            </div>
+
+            <div class="dropdown" onclick="toggleDropdown(this)">
+                <span class="dropdown-number">03</span>
+                <span class="dropdown-title">How to apply for the services?</span>
+                <div class="dropdown-icon">
+                    <svg viewBox="0 0 20 20" fill="white" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M10.707 9.293a1 1 0 00-1.414 0L6 12.586l-3.293-3.293a1 1 0 00-1.414 1.414l4 4a1 1 0 001.414 0l4-4a1 1 0 000-1.414z" />
+                    </svg>
+                </div>
+            </div>
+            <div class="dropdown-content">
+                <p>You can easily apply for our services through several platforms. Simply reach out to us on Discord, Facebook, Instagram, or WhatsApp. These options provide flexibility and convenience for you to get in touch and apply.</p>
+            </div>
+        </div>
+
+        <div class="container_4">
+            <h1>Our<span class="highlight"> Team</span></h1>
+            <div class="slider-container">
+                <div class="slider">
+                    <div class="slide" onclick="showPopup(1)">
+                        <img src="https://via.placeholder.com/150" alt="Profile Image">
+                        <h3>Garry Shrestha</h3>
+                        <p>Founder</p>
+                    </div>
+                    <div class="slide" onclick="showPopup(2)">
+                        <img src="https://via.placeholder.com/150" alt="Profile Image">
+                        <h3>Prachan Subedi</h3>
+                        <p>Manager</p>
+                    </div>
+                    <div class="slide" onclick="showPopup(3)">
+                        <img src="https://via.placeholder.com/150" alt="Profile Image">
+                        <h3>Prayas Bhatt</h3>
+                        <p>Manager / Website Developer</p>
+                    </div>
+                    <div class="slide" onclick="showPopup(4)">
+                        <img src="https://via.placeholder.com/150" alt="Profile Image">
+                        <h3>Rozeen Shrestha</h3>
+                        <p>Manager / Discord Bot Developer</h3>
+                    </div>
+                    <div class="slide" onclick="showPopup(5)">
+                        <img src="https://via.placeholder.com/150" alt="Profile Image">
+                        <h3>Manoj Magar</h3>
+                        <p>Graphic Designing</p>
+                    </div>
+                    <div class="slide" onclick="showPopup(6)">
+                        <img src="https://via.placeholder.com/150" alt="Profile Image">
+                        <h3>Name</h3>
+                        <p>Post </p>
+                    </div>
+                </div>
+                <button class="prev" onclick="moveSlides(-1)">&#10094;</button>
+                <button class="next" onclick="moveSlides(1)">&#10095;</button>
+            </div>
+
+            <!-- Modal Popup -->
+            <div id="popup" class="popup">
+                <div class="popup-content">
+                    <span class="close" onclick="closePopup()">&times;</span>
+                    <img id="popup-image" src="" alt="Profile Image">
+                    <h3 id="popup-name"></h3>
+                    <p id="popup-post"></p>
+                    <p id="popup-details"></p>
+                </div>
+            </div>
+        </div>
+
+
+        <h1><span class="highlight" style="margin: 23%;">Testimonial</span></h1>
+
+        <div class="testimonial-container">
+
+            <div class="testimonial-slider">
+                <div class="testimonial">
+                    <img src="https://via.placeholder.com/50" alt="Profile Image">
+                    <h3>Customer Name 1</h3>
+                    <p class="testimonial-text">"Customer testimonial 1. This is an example testimonial from a happy
+                        customer."</p>
+                </div>
+                <div class="testimonial">
+                    <img src="https://via.placeholder.com/50" alt="Profile Image">
+                    <h3>Customer Name 2</h3>
+                    <p class="testimonial-text">"Customer testimonial 2. This is an example testimonial from a happy
+                        customer."</p>
+                </div>
+                <div class="testimonial">
+                    <img src="https://via.placeholder.com/50" alt="Profile Image">
+                    <h3>Customer Name 3</h3>
+                    <p class="testimonial-text">"Customer testimonial 3. This is an example testimonial from a happy
+                        customer."</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="container_1" style="margin-top: 100px;">
+        <div class="footer details">
+            <div class="footer-img">
+                <img src="logo.png" alt="Company Logo">
+            </div>
+            <div class="footer-detail">
+                <p>Nepal</p>
+                <p>Email: innowixworkspace@gmail.com <br>
+                     Phone: 9888888888</p>
+            </div>
+        </div>
+        <div class="footer-links">
+            <p style="text-decoration: none; font-size: 30px;">LINKS</p>
+            <ul class="footer-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Team</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-socials">
+            <p style="text-decoration: none; font-size: 30px;">Socials</p>
+            <a href="#" class="social-icon"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="social-icon"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+    </div>
+
+    <script>
+        function toggleDropdown(element) {
+            const dropdownContent = element.nextElementSibling;
+            const dropdownIcon = element.querySelector('.dropdown-icon');
+            if (dropdownContent.style.maxHeight) {
+                dropdownContent.style.maxHeight = null;
+                dropdownIcon.style.transform = 'rotate(0deg)';
+            } else {
+                dropdownContent.style.maxHeight = dropdownContent.scrollHeight + 'px';
+                dropdownIcon.style.transform = 'rotate(90deg)';
+            }
+        }
+
+        let currentIndex = 0;
+
+        const teamMembers = [
+            {
+                id: 1,
+                name: "Garry Shrestha",
+                post: "Founder",
+                image: "https://via.placeholder.com/150",
+                details: "Garry Shrestha is a manxe!!!!"
+            },
+            {
+                id: 2,
+                name: "Name 2",
+                post: "Post 2",
+                image: "https://via.placeholder.com/150",
+                details: "Details about Name 2"
+            },
+            {
+                id: 3,
+                name: "Name 3",
+                post: "Post 3",
+                image: "https://via.placeholder.com/150",
+                details: "Details about Name 3"
+            },
+            {
+                id: 4,
+                name: "Name 4",
+                post: "Post 4",
+                image: "https://via.placeholder.com/150",
+                details: "Details about Name 4"
+            },
+            {
+                id: 5,
+                name: "Name 5",
+                post: "Post 5",
+                image: "https://via.placeholder.com/150",
+                details: "Details about Name 5"
+            },
+            {
+                id: 6,
+                name: "Name 6",
+                post: "Post 6",
+                image: "https://via.placeholder.com/150",
+                details: "Details about Name 6"
+            }
+        ];
+
+        function moveSlides(n) {
+            const slides = document.querySelectorAll('.slide');
+            const totalSlides = slides.length;
+            const visibleSlides = getComputedStyle(document.querySelector('.slide')).minWidth === "100%" ? 1 :
+                getComputedStyle(document.querySelector('.slide')).minWidth === "50%" ? 2 : 3;
+
+            currentIndex += n;
+
+            if (currentIndex < 0) {
+                currentIndex = totalSlides - visibleSlides;
+            } else if (currentIndex >= totalSlides) {
+                currentIndex = 0;
+            }
+
+            const newTransform = -currentIndex * (100 / visibleSlides);
+            document.querySelector('.slider').style.transform = `translateX(${newTransform}%)`;
+        }
+
+        function showPopup(id) {
+            const member = teamMembers.find(member => member.id === id);
+            document.getElementById('popup-image').src = member.image;
+            document.getElementById('popup-name').textContent = member.name;
+            document.getElementById('popup-post').textContent = member.post;
+            document.getElementById('popup-details').textContent = member.details;
+            document.getElementById('popup').style.display = 'block';
+        }
+
+        function closePopup() {
+            document.getElementById('popup').style.display = 'none';
+        }
+
+        let testimonialIndex = 0;
+        let startX = 0;
+        let isDragging = false;
+        const intervalTime = 7000; // 7 seconds
+        let autoSlideInterval;
+        const testimonials = document.querySelectorAll('.testimonial');
+        const testimonialSlider = document.querySelector('.testimonial-slider');
+
+        function moveTestimonial(n) {
+            testimonialIndex = (testimonialIndex + n + testimonials.length) % testimonials.length;
+            updateSlider();
+        }
+
+        function updateSlider() {
+            const newTransform = -testimonialIndex * 100;
+            testimonialSlider.style.transform = `translateX(${newTransform}%)`;
+        }
+
+        function autoSlide() {
+            autoSlideInterval = setInterval(() => {
+                moveTestimonial(1);
+            }, intervalTime);
+        }
+
+        function resetAutoSlide() {
+            clearInterval(autoSlideInterval);
+            autoSlide();
+        }
+
+        function startDrag(e) {
+            isDragging = true;
+            startX = e.pageX || e.touches[0].pageX;
+            testimonialSlider.style.transition = 'none';
+        }
+
+        function stopDrag() {
+            if (!isDragging) return;
+            isDragging = false;
+            testimonialSlider.style.transition = 'transform 0.5s ease-in-out';
+            resetAutoSlide();
+        }
+
+        function drag(e) {
+            if (!isDragging) return;
+            const x = e.pageX || e.touches[0].pageX;
+            const moveX = x - startX;
+            const width = testimonialSlider.clientWidth;
+            const newTransform = -testimonialIndex * 100 + (moveX / width) * 100;
+            testimonialSlider.style.transform = `translateX(${newTransform}%)`;
+        }
+
+        function endDrag(e) {
+            if (!isDragging) return;
+            const x = e.pageX || e.changedTouches[0].pageX;
+            const moveX = x - startX;
+            if (Math.abs(moveX) > testimonialSlider.clientWidth / 3) {
+                moveTestimonial(moveX > 0 ? -1 : 1);
+            } else {
+                moveTestimonial(0);
+            }
+            isDragging = false;
+            testimonialSlider.style.transition = 'transform 0.5s ease-in-out';
+        }
+
+        testimonialSlider.addEventListener('mousedown', startDrag);
+        testimonialSlider.addEventListener('touchstart', startDrag);
+
+        testimonialSlider.addEventListener('mouseup', endDrag);
+        testimonialSlider.addEventListener('mouseleave', endDrag);
+        testimonialSlider.addEventListener('touchend', endDrag);
+
+        testimonialSlider.addEventListener('mousemove', drag);
+        testimonialSlider.addEventListener('touchmove', drag);
+
+        // Initialize auto sliding
+        autoSlide();
+
+
+    </script>
+</body>
+
+</html>

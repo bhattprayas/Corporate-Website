@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Innowix Workspace - Service Page</title>
+    <script src="https://kit.fontawesome.com/3a3e3b7b30.js" crossorigin="anonymous"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #1a0029, #000033);
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .navbar-logo {
+            display: flex;
+        }
+
+        .navbar-logo img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-right: 15px;
+        }
+
+        .navbar-logo span {
+            font-size: 0.8rem;
+            font-weight: 300;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.7;
+        }
+
+        .navbar-menu {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar-menu li {
+            margin-left: 25px;
+        }
+
+        .navbar-menu a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 400;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .navbar-menu a::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: #ffffff;
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .navbar-menu a:hover {
+            color: #ffffff;
+        }
+
+        .navbar-menu a:hover::after {
+            transform: scaleX(1);
+        }
+
+        .content {
+            padding: 30px;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            max-width: 1200px;
+            padding: 20px;
+            box-sizing: border-box;
+            margin-left: 10%;
+        }
+
+        .card {
+            width: 100%;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .card img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .card .caption {
+            padding: 10px;
+            background-color: #ffffff;
+            text-align: center;
+            color: black;
+            
+        }
+
+
+
+        .container_1 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(145deg, #2a0141, #000000);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            max-width: 90%;
+            box-sizing: border-box;
+            gap: 90px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 60px;
+        }
+
+        .footer.details {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            color: #fff;
+            flex-wrap: wrap;
+            text-align: left;
+        }
+
+        .footer-img img {
+            height: 80px;
+            border-radius: 50%;
+        }
+
+        .footer-detail p {
+            margin: 5px 0;
+            line-height: 1.5;
+        }
+
+        .footer-links {
+            text-align: center;
+            padding: 20px;
+            color: #fff;
+        }
+
+        .footer-menu {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .footer-menu li {
+            margin: 0 15px;
+        }
+
+        .footer-menu li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .footer-menu li a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-socials {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .social-icon i {
+            height: 30px;
+            margin: 0 10px;
+            border-radius: 40%;
+            transition: transform 0.3s ease;
+        }
+
+        .social-icon i:hover {
+            transform: scale(1.2);
+        }
+
+     
+
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="navbar-logo">
+            <img src="logo.png" alt="Logo">
+        </div>
+        <ul class="navbar-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="team.html">Team</a></li>
+            <li><a href="contact.html">Contact us</a></li>
+        </ul>
+    </nav>
+    <div class="headingtitles">
+        <h1 class="heading-title">Contact <span class="highlight"> Us</span></h1>
+    </div>
+
+    <div class="grid-container">
+        <div class="card">
+            <img src="discordredirect.png" alt="discord">
+            <div class="caption">
+                <p>Discord</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="Facebookredirect.png" alt="facebook">
+            <div class="caption">
+                <p>Facebook</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="Instagramredirect.png" alt="instagram">
+            <div class="caption">
+                <p>Instagram</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container_1" style="margin-top: 100px;">
+        <div class="footer details">
+            <div class="footer-img">
+                <img src="logo.png" alt="Company Logo">
+            </div>
+            <div class="footer-detail">
+                <p>Nepal</p>
+                <p>Email: innowixworkspace@gmail.com <br>
+                    Phone: 9888888888</p>
+            </div>
+        </div>
+        <div class="footer-links">
+            <p style="text-decoration: none; font-size: 30px;">LINKS</p>
+            <ul class="footer-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Team</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-socials">
+            <p style="text-decoration: none; font-size: 30px;">Socials</p>
+            <a href="#" class="social-icon"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="social-icon"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+    </div>
+</body>
+
+</html>
